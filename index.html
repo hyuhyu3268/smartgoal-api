@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101827" />
+  <meta name="description" content="SmartGoal — maqsadlaringizni rejalashtiring, rivojlanishingizni kuzating va o'z imkoniyatingizni kashf eting." />
+  <title>SmartGoal — Maqsadlaringiz sari</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+  <div class="app" id="app">
+
+    <!-- AUTHENTICATION -->
+    <section class="auth-screen" id="auth-screen" aria-label="Kirish va ro'yxatdan o'tish">
+      <div class="auth-decoration auth-decoration-one"></div>
+      <div class="auth-decoration auth-decoration-two"></div>
+
+      <div class="auth-layout">
+
+        <div class="auth-showcase">
+          <a class="brand brand-large" href="#" aria-label="SmartGoal bosh sahifa">
+            <span class="brand-mark">
+              <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <path d="M20 3.5L24.3 14.1L35.5 18.2L24.3 22.4L20 33L15.7 22.4L4.5 18.2L15.7 14.1L20 3.5Z" fill="currentColor"/>
+                <path d="M31.5 27.5L33.2 31.2L37 33L33.2 34.7L31.5 38.5L29.7 34.7L26 33L29.7 31.2L31.5 27.5Z" fill="currentColor" opacity=".65"/>
+              </svg>
+            </span>
+            <span>Smart<span class="brand-accent">Goal</span></span>
+          </a>
+
+          <div class="auth-showcase-content">
+            <span class="eyebrow">O'ZINGIZNING YANGI BOSQICHINGIZ</span>
+            <h1>Bugungi kichik qadam — ertangi katta natija.</h1>
+            <p>
+              Maqsadlaringizni tartibga soling, odatlaringizni rivojlantiring
+              va har kuni kechagidan yaxshiroq bo'ling.
+            </p>
+
+            <div class="auth-feature-list">
+              <div class="auth-feature">
+                <span class="feature-icon">
+                  <i data-lucide="target"></i>
+                </span>
+                <div>
+                  <strong>Maqsadlaringizni boshqaring</strong>
+                  <span>Rejalashtiring va natijaga erishing</span>
+                </div>
+              </div>
+
+              <div class="auth-feature">
+                <span class="feature-icon">
+                  <i data-lucide="chart-no-axes-combined"></i>
+                </span>
+                <div>
+                  <strong>Rivojlanishingizni kuzating</strong>
+                  <span>Har bir qadamingizni ko'rib boring</span>
+                </div>
+              </div>
+
+              <div class="auth-feature">
+                <span class="feature-icon">
+                  <i data-lucide="users"></i>
+                </span>
+                <div>
+                  <strong>Birgalikda rivojlaning</strong>
+                  <span>Boshqalarni toping va yutuqlaringizni ulashing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-showcase-footer">
+            <span>O'zgarishni bugundan boshla.</span>
+            <span>© 2026 SmartGoal</span>
+          </div>
+        </div>
+
+        <div class="auth-form-side">
+          <div class="auth-form-container">
+
+            <div class="auth-mobile-brand">
+              <span class="brand-mark">
+                <i data-lucide="sparkles"></i>
+              </span>
+              <strong>Smart<span class="brand-accent">Goal</span></strong>
+            </div>
+
+            <div class="auth-heading">
+              <span class="eyebrow" id="auth-eyebrow">XUSH KELIBSIZ</span>
+              <h2 id="auth-title">Hisobingizga kiring</h2>
+              <p id="auth-description">Davom etish uchun ma'lumotlaringizni kiriting.</p>
+            </div>
+
+            <div class="auth-tabs" id="auth-tabs">
+              <button class="auth-tab active" type="button" data-auth-tab="login">
+                Kirish
+              </button>
+              <button class="auth-tab" type="button" data-auth-tab="register">
+                Ro'yxatdan o'tish
+              </button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+              <div class="form-field">
+                <label for="login-identifier">Username yoki elektron pochta</label>
+                <div class="input-wrap">
+                  <i data-lucide="user"></i>
+                  <input
+                    id="login-identifier"
+                    name="identifier"
+                    type="text"
+                    placeholder="Username yoki email"
+                    autocomplete="username"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="login-password">Parol</label>
+                <div class="input-wrap">
+                  <i data-lucide="lock"></i>
+                  <input
+                    id="login-password"
+                    name="password"
+                    type="password"
+                    placeholder="Parolingizni kiriting"
+                    autocomplete="current-password"
+                    required
+                  />
+                  <button class="input-action" type="button" data-action="toggle-password" data-target="login-password" aria-label="Parolni ko'rsatish">
+                    <i data-lucide="eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="auth-options">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="remember" />
+                  <span>Bu qurilmada eslab qolish</span>
+                </label>
+                <button type="button" class="text-button" data-action="forgot-password">
+                  Parolni unutdingizmi?
+                </button>
+              </div>
+
+              <button class="primary-button auth-submit" type="submit">
+                <span>Kirish</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </form>
+
+            <form id="register-form" class="auth-form hidden">
+              <div class="form-field">
+                <label for="register-name">Ism va familiya</label>
+                <div class="input-wrap">
+                  <i data-lucide="user-round"></i>
+                  <input
+                    id="register-name"
+                    name="name"
+                    type="text"
+                    placeholder="Ismingiz va familiyangiz"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="register-email">Elektron pochta</label>
+                <div class="input-wrap">
+                  <i data-lucide="mail"></i>
+                  <input
+                    id="register-email"
+                    name="email"
+                    type="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="register-birthdate">Tug'ilgan sana</label>
+                <div class="input-wrap">
+                  <i data-lucide="calendar-days"></i>
+                  <input
+                    id="register-birthdate"
+                    name="birthdate"
+                    type="date"
+                    autocomplete="bday"
+                    required
+                  />
+                </div>
+                <small>Yoshingiz avtomatik hisoblanadi. Maktab yoki sinf tanlash shart emas.</small>
+              </div>
+
+              <div class="form-field">
+                <label for="register-password">Parol</label>
+                <div class="input-wrap">
+                  <i data-lucide="lock"></i>
+                  <input
+                    id="register-password"
+                    name="password"
+                    type="password"
+                    placeholder="Kamida 8 ta belgi"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <button class="input-action" type="button" data-action="toggle-password" data-target="register-password" aria-label="Parolni ko'rsatish">
+                    <i data-lucide="eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <label class="checkbox-label terms-label">
+                <input type="checkbox" name="terms" required />
+                <span>Foydalanish shartlari va maxfiylik siyosatiga roziman.</span>
+              </label>
+
+              <button class="primary-button auth-submit" type="submit">
+                <span>Hisob yaratish</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </form>
+
+            <div class="auth-divider">
+              <span>yoki</span>
+            </div>
+
+            <p class="auth-switch-text" id="auth-switch-text">
+              Hali hisobingiz yo'qmi?
+              <button type="button" class="text-button" data-auth-tab="register">Hisob yarating</button>
+            </p>
+
+            <p class="auth-legal">
+              SmartGoal — rivojlanishingiz uchun yaratilgan platforma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN APPLICATION -->
+    <div class="app-shell hidden" id="app-shell">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <a class="brand" href="#" data-page="dashboard">
+            <span class="brand-mark">
+              <i data-lucide="sparkles"></i>
+            </span>
+            <span>Smart<span class="brand-accent">Goal</span></span>
+          </a>
+
+          <button class="icon-button sidebar-close" type="button" data-action="close-sidebar" aria-label="Menyuni yopish">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="sidebar-profile" id="sidebar-profile">
+          <button class="profile-mini" type="button" data-page="profile">
+            <span class="avatar avatar-medium" id="sidebar-avatar">
+              <i data-lucide="user-round"></i>
+            </span>
+            <span class="profile-mini-info">
+              <strong id="sidebar-name">Foydalanuvchi</strong>
+              <small id="sidebar-username">@username</small>
+            </span>
+            <i data-lucide="chevron-right" class="profile-chevron"></i>
+          </button>
+        </div>
+
+        <nav class="main-navigation" aria-label="Asosiy navigatsiya">
+          <span class="nav-section-label">ASOSIY</span>
+
+          <button class="nav-link active" type="button" data-page="dashboard">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Bosh sahifa</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="goals">
+            <i data-lucide="target"></i>
+            <span>Maqsadlarim</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="schedule">
+            <i data-lucide="calendar-days"></i>
+            <span>Vazifalar</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="planner">
+            <i data-lucide="calendar-range"></i>
+            <span>Rejalashtiruvchi</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="analytics">
+            <i data-lucide="chart-no-axes-combined"></i>
+            <span>Statistika</span>
+          </button>
+
+          <span class="nav-section-label nav-section-spaced">RIVOJLANISH</span>
+
+          <button class="nav-link" type="button" data-page="achievements">
+            <i data-lucide="trophy"></i>
+            <span>Yutuqlarim</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="rewards">
+            <i data-lucide="shopping-bag"></i>
+            <span>Mukofotlar do'koni</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="community">
+            <i data-lucide="users"></i>
+            <span>Hamjamiyat</span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="ai">
+            <i data-lucide="brain-circuit"></i>
+            <span>Smart AI</span>
+            <span class="nav-badge">AI</span>
+          </button>
+
+          <span class="nav-section-label nav-section-spaced">SHAXSIY</span>
+
+          <button class="nav-link" type="button" data-page="notifications">
+            <i data-lucide="bell"></i>
+            <span>Bildirishnomalar</span>
+            <span class="notification-dot" id="notification-dot"></span>
+          </button>
+
+          <button class="nav-link" type="button" data-page="settings">
+            <i data-lucide="settings-2"></i>
+            <span>Sozlamalar</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-points">
+            <div class="points-icon">
+              <i data-lucide="zap"></i>
+            </div>
+            <div>
+              <small>Yig'ilgan ochkolar</small>
+              <strong id="sidebar-xp">0 XP</strong>
+            </div>
+          </div>
+
+          <button class="sidebar-logout" type="button" data-action="logout">
+            <i data-lucide="log-out"></i>
+            <span>Hisobdan chiqish</span>
+          </button>
+        </div>
+      </aside>
+
+      <div class="sidebar-backdrop" data-action="close-sidebar"></div>
+
+      <!-- MAIN AREA -->
+      <main class="main-area">
+
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-button menu-toggle" type="button" data-action="open-sidebar" aria-label="Menyuni ochish">
+              <i data-lucide="menu"></i>
+            </button>
+
+            <div class="page-heading">
+              <span class="page-date" id="current-date"></span>
+              <h1 id="page-title">Bosh sahifa</h1>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <button class="icon-button" type="button" data-action="toggle-search" aria-label="Qidirish">
+              <i data-lucide="search"></i>
+            </button>
+
+            <button class="icon-button notification-button" type="button" data-page="notifications" aria-label="Bildirishnomalar">
+              <i data-lucide="bell"></i>
+              <span class="notification-indicator"></span>
+            </button>
+
+            <div class="topbar-divider"></div>
+
+            <button class="topbar-user" type="button" data-page="profile">
+              <span class="avatar avatar-small" id="topbar-avatar">
+                <i data-lucide="user-round"></i>
+              </span>
+              <span class="topbar-user-name" id="topbar-name">Foydalanuvchi</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+          </div>
+        </header>
+
+        <div class="global-search hidden" id="global-search">
+          <i data-lucide="search"></i>
+          <input id="global-search-input" type="search" placeholder="Maqsad, vazifa yoki foydalanuvchini qidiring..." />
+          <button class="icon-button" type="button" data-action="close-search" aria-label="Qidiruvni yopish">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <!-- JAVASCRIPT RENDERS PAGE CONTENT HERE -->
+        <section class="content-area" id="content" aria-live="polite">
+          <div class="loading-state">
+            <span class="loading-spinner"></span>
+            <p>SmartGoal yuklanmoqda...</p>
+          </div>
+        </section>
+
+        <footer class="app-footer">
+          <span>© 2026 SmartGoal</span>
+          <span>Har kuni bir qadam oldinga.</span>
+        </footer>
+
+      </main>
+    </div>
+
+    <!-- GLOBAL MODAL -->
+    <div class="modal-overlay hidden" id="modal-overlay" role="presentation">
+      <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <div>
+            <span class="eyebrow" id="modal-eyebrow">SMARTGOAL</span>
+            <h2 id="modal-title">Oyna</h2>
+          </div>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Yopish">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer" id="modal-footer"></div>
+      </section>
+    </div>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div class="toast-container" id="toast-container">
+      <div class="toast hidden" id="toast" role="status" aria-live="polite">
+        <span class="toast-icon">
+          <i data-lucide="check-circle-2"></i>
+        </span>
+        <span class="toast-message" id="toast-message"></span>
+        <button class="toast-close" type="button" data-action="close-toast" aria-label="Yopish">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ICONS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- APPLICATION LOGIC -->
+  <script src="script.js"></script>
+  <!-- <script src="auth.js"></script> -->
+</body>
+</html>
